@@ -43,7 +43,7 @@
     }
 
     .m-article-card__info {
-      background-color: var(--secondary-subtle-color);
+      background-color: var(--element-background-color);
     }
 
     .m-article-card__title {
@@ -91,7 +91,7 @@
   position: relative;
   height: 200px;
   border-radius: 10px 10px 0 0;
-  background-color: var(--secondary-subtle-color);
+  background-color: var(--element-background-color);
   overflow: hidden;
   @include transform(translateZ(0));
 
@@ -197,7 +197,7 @@
   height: 200px;
   overflow: hidden;
   border-radius: 0 0 10px 10px;
-  background-color: var(--background-color);
+  background-color: var(--element-background-color);
 
   @include respond-to('medium') {
     padding-top: 53px;

@@ -50,6 +50,7 @@
 
 .l-wrapper.in-post.no-image {
   padding-top: 40px;
+  background: var(--element-background-color);
 
   @include respond-to('medium') {
     padding-top: 80px;
