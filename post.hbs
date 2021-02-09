@@ -1,4 +1,24 @@
 {{!--
+This thing ensures the site has a correct lang
+--}}
+{{!< default}}
+{{#post}}
+    {{#has tag="#de,#tr,#es"}}
+        {{#has tag="#de"}}
+            {{#contentFor "lang"}}de{{/contentFor}}
+        {{/has}}
+        {{#has tag="#tr"}}
+            {{#contentFor "lang"}}tr{{/contentFor}}
+        {{/has}}
+        {{#has tag="#es"}}
+            {{#contentFor "lang"}}es{{/contentFor}}
+        {{/has}}
+    {{else}}
+        {{#contentFor "lang"}}{{@site.lang}}{{/contentFor}}
+    {{/has}}
+{{/post}}
+
+{{!--
 This template is used for the post page.
 --}}
 
@@ -58,7 +78,7 @@ into the {body} of the default.hbs template --}}
                     class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
                     <span class="icon-twitter" aria-hidden="true"></span>
                   </a>
-                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top" customLocale=(block "lang")}}">
                     <span class="icon-arrow-top" aria-hidden="true"></span>
                     <svg aria-hidden="true">
                       <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
@@ -70,7 +90,7 @@ into the {body} of the default.hbs template --}}
               {{!-- List of tags  --}}
               {{#if tags}}
                 <section class="m-tags in-post">
-                  <h3 class="m-submenu-title">{{t "Tags"}}</h3>
+                  <h3 class="m-submenu-title">{{t "Tags" customLocale=(block "lang")}}</h3>
                   <ul>
                     {{#foreach tags}}
                       <li>
@@ -89,9 +109,9 @@ into the {body} of the default.hbs template --}}
             <div class="l-wrapper in-post">
               <div class="m-subscribe-section__content">
                 <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter" customLocale=(block "lang")}}</h4>
                   <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
+                    {{t "Get the latest posts delivered right to your inbox." customLocale=(block "lang")}}
                   </p>
                 </div>
                 <div class="m-subscribe-section__form">
@@ -102,7 +122,7 @@ into the {body} of the default.hbs template --}}
                     input_class="m-input in-subscribe-section"
                     button_id="subscribe_button"
                     button_class="m-button primary block"
-                    placeholder=(t "Your email address")
+                    placeholder=(t "Your email address" customLocale=(block "lang"))
                   }}
                 </div>
               </div>
@@ -114,9 +134,9 @@ into the {body} of the default.hbs template --}}
             <div class="l-wrapper in-post">
               <div class="m-subscribe-section__content">
                 <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter" customLocale=(block "lang")}}</h4>
                   <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
+                    {{t "Get the latest posts delivered right to your inbox." customLocale=(block "lang")}}
                   </p>
                 </div>
                 <div class="m-subscribe-section__form">
@@ -143,7 +163,7 @@ into the {body} of the default.hbs template --}}
               </h4>
               {{#has author="count:>1"}}
                 <p class="m-small-text in-author-along-with">
-                  {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
+                  {{authors separator=", " prefix=(t "Among with no break line" customLocale=(block "lang")) from="2"}}
                 </p>
               {{/has}}
               {{#if primary_author.bio}}

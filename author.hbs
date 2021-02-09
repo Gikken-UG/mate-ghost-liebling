@@ -41,7 +41,7 @@ into the {body} of the default.hbs template --}}
             <ul class="m-hero-social">
               {{#if website}}
                 <li>
-                  <a href="{{website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
+                  <a href="{{website}}" target="_blank" rel="noopener" aria-label="{{t "Website" customLocale=(block "lang")}}">
                     <span class="icon-globe"></span>
                   </a>
                 </li>
@@ -64,7 +64,7 @@ into the {body} of the default.hbs template --}}
           {{/has}}
           <ul class="m-hero-stats">
             <li>
-              {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+              {{plural ../pagination.total empty=(t "No posts" customLocale=(block "lang")) singular=(t "1 post" customLocale=(block "lang")) plural=(t "% posts" customLocale=(block "lang"))}}
             </li>
             {{#if location}}
               <li>&bull;</li>

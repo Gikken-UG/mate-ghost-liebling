@@ -4,7 +4,7 @@ This header template is shared across all the pages.
 
 <header class="m-header {{#if background}}with-picture{{/if}} js-header">
   <div class="m-mobile-topbar" data-aos="fade-down">
-    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="{{t "Open menu"}}">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="{{t "Open menu" customLocale=(block "lang")}}">
       <span class="icon-menu" aria-hidden="true"></span>
     </button>
     {{#if @site.logo}}
@@ -16,13 +16,13 @@ This header template is shared across all the pages.
         {{@site.title}}
       </a>
     {{/if}}
-    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="{{t "Open search"}}">
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="{{t "Open search" customLocale=(block "lang")}}">
       <span class="icon-search" aria-hidden="true"></span>
     </button>
   </div>
 
   <div class="m-menu js-menu">
-    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="{{t "Close menu"}}">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="{{t "Close menu" customLocale=(block "lang")}}">
       <span class="icon-close"></span>
     </button>
     <div class="m-menu__main" data-aos="fade-down">

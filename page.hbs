@@ -1,4 +1,24 @@
 {{!--
+This thing ensures the site has a correct lang
+--}}
+{{!< default}}
+{{#post}}
+    {{#has tag="#de,#tr,#es"}}
+        {{#has tag="#de"}}
+            {{#contentFor "lang"}}de{{/contentFor}}
+        {{/has}}
+        {{#has tag="#tr"}}
+            {{#contentFor "lang"}}tr{{/contentFor}}
+        {{/has}}
+        {{#has tag="#es"}}
+            {{#contentFor "lang"}}es{{/contentFor}}
+        {{/has}}
+    {{else}}
+        {{#contentFor "lang"}}{{@site.lang}}{{/contentFor}}
+    {{/has}}
+{{/post}}
+
+{{!--
 This template is used for the posts that are marked as pages.
 --}}
 
